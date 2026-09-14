@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An evidence-first agentic copilot for venture sourcing and screening." />
+    <title>Scoutline — Venture intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Scoutline home"><span class="brand-mark">S</span><span>SCOUTLINE</span></a>
+      <div class="top-actions"><span class="system"><i></i> Research system ready</span><a href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">AGENTIC VENTURE INTELLIGENCE / 01</p>
+        <h1>Find the signal<br />before the <em>round.</em></h1>
+        <p class="subhead">Turn your investment thesis into a ranked, evidence-backed startup shortlist. Two research agents source, verify, and challenge every opportunity.</p>
+        <div class="agent-strip" aria-label="Agent workflow">
+          <div><span>01</span><strong>Source</strong><small>Live market discovery</small></div>
+          <b>→</b>
+          <div><span>02</span><strong>Screen</strong><small>Evidence & scorecard</small></div>
+          <b>→</b>
+          <div><span>03</span><strong>Decide</strong><small>Ranked deal brief</small></div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <form id="thesis-form" class="panel input-panel">
+          <div class="panel-head"><span>INVESTMENT MANDATE</span><span>01 / INPUT</span></div>
+          <label>THESIS<textarea name="description" required minlength="20" rows="5">Pre-seed and seed software startups in the UK and Europe using AI to transform knowledge work, with strong founder-market fit and early proof of demand.</textarea></label>
+          <div class="grid-two">
+            <label>STAGE<select name="stage"><option>Pre-seed & Seed</option><option>Pre-seed</option><option>Seed</option><option>Series A</option></select></label>
+            <label>GEOGRAPHY<input name="geography" value="UK & Europe" /></label>
+            <label>SECTORS<input name="sectors" value="AI, SaaS, Future of Work" /></label>
+            <label>CHEQUE<input name="cheque" value="£250k–£1.5m" /></label>
+          </div>
+          <label>EXCLUSIONS<input name="exclusions" placeholder="e.g. crypto, hardware, pre-product" /></label>
+          <label>WHAT WOULD MAKE YOU LEAN IN?<textarea name="signals" rows="3">Technical or repeat founders, proprietary distribution, active pilots, credible 10x product advantage.</textarea></label>
+          <div class="count-row"><label>CANDIDATES <input name="candidateCount" type="number" min="3" max="15" value="10" /></label><label>SHORTLIST <input name="shortlistCount" type="number" min="1" max="10" value="5" /></label></div>
+          <button class="run-button" type="submit"><span>RUN SOURCING WORKFLOW</span><span>↗</span></button>
+          <p class="fineprint">Live web research · source-level citations · no database required</p>
+        </form>
+
+        <section class="panel output-panel" aria-live="polite">
+          <div class="panel-head"><span>DEAL FLOW</span><span id="result-state">WAITING / 00</span></div>
+          <div id="empty-state" class="empty-state">
+            <div class="radar"><i></i><i></i><i></i><span></span></div>
+            <h2>Your shortlist will appear here.</h2>
+            <p>Define your thesis, run the workflow, and the agents will return ranked companies with scores, risks, open questions, and sources.</p>
+          </div>
+          <div id="loading-state" class="loading-state hidden">
+            <p class="eyebrow">RESEARCH IN PROGRESS</p><h2>Agents are scanning the market.</h2>
+            <div class="progress"><span></span></div>
+            <ol><li class="active">Discovering thesis-matched startups</li><li>Verifying company and market evidence</li><li>Applying the investment scorecard</li></ol>
+          </div>
+          <div id="results" class="results hidden"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer><span>SCOUTLINE / OPEN-SOURCE MVP</span><span>Human judgment remains the final investment committee.</span></footer>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
